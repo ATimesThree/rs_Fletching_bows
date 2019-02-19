@@ -32,8 +32,8 @@ coordinates = {'bank_second_tab' : [445, 119, 470, 137], # Second sloth in the b
 def rand_coor(coor1, coor2):
     '''
     Takes in two coordinates (x1,x2) and output a random point bewteen these values.
-    :param x1: 1    Example --> access_bank[0]
-    :param y1: 7    Example --> access_bank[2]
+    :param x1: 1    
+    :param x2: 7    
     :return: 3
     '''
     new_coor = randint(coor1,coor2)
