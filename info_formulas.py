@@ -1,6 +1,6 @@
 from random import randint
-from pyclick import HumanClicker
-import time, random
+import time, random, pyautogui
+
 
 ##############################################################################
 #########################                       ##############################
@@ -39,29 +39,42 @@ def rand_coor(coor1, coor2):
     new_coor = randint(coor1,coor2)
     return new_coor
 
-
 ## DIfferent pause times - some followed by a click
 def rand_sleep(text):
-    hc = HumanClicker()
 
     if text == 'short':
-        time.sleep(random.uniform(0.2,1))
-        hc.click()
-        time.sleep(random.uniform(0.2, 1))
+        time.sleep(random.uniform(0.5,2.5))
+        pyautogui.click()
+        time.sleep(random.uniform(0.5, 1.5))
+
     elif text == 'medium':
         time.sleep(randint(1,5))
+
     elif text == 'long':
         time.sleep(random.uniform(4,8.5))
+
     elif text == 'bank':
-        time.sleep(random.uniform(1,3))
+        time.sleep(random.uniform(1,4))
+
     elif text == 'quick':
-        time.sleep(random.uniform(0.2,1.2))
-    elif text == 'sleep_shortbow':
-        time.sleep(random.uniform(30,35))
+        time.sleep(random.uniform(0.5, 2))
+
+    elif text == 'insane':
+        time.sleep(random.uniform(0.1, 0.3))
+
+    #elif text == 'sleep_shortbow':
+    #    time.sleep(random.uniform(30,35))
+
     elif text == 'make_bow':
-        time.sleep(random.uniform(0.2, 1))
-        hc.click()
+        time.sleep(random.uniform(0.5, 2))
+        pyautogui.click()
         time.sleep(random.uniform(49,51))
+
+    elif text == 'string_bow':
+        time.sleep(random.uniform(0.5, 2))
+        pyautogui.click()
+        time.sleep(random.uniform(16,18))
+
     else:
         return False
 
