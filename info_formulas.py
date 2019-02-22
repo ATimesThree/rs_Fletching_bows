@@ -20,6 +20,8 @@ coordinates = {'bank_second_tab' : [445, 119, 470, 137], # Second sloth in the b
                'bank_exit':[818,92,826,97], # Exit button in the bank
                'make_longbow': [659,469,736,520], # The box to make longbow
                'make_shortbow': [569,469,637,520], # The box to make shortbow
+               'make_soft_clay':[555,473,639,525], # The box to create soft clay
+               '14th_item':[999, 402, 1007, 415], # Item number 14 in the  inventory
                }
 
 
@@ -32,8 +34,8 @@ coordinates = {'bank_second_tab' : [445, 119, 470, 137], # Second sloth in the b
 def rand_coor(coor1, coor2):
     '''
     Takes in two coordinates (x1,x2) and output a random point bewteen these values.
-    :param x1: 1    
-    :param x2: 7    
+    :param x1: 1    Example --> access_bank[0]
+    :param y1: 7    Example --> access_bank[2]
     :return: 3
     '''
     new_coor = randint(coor1,coor2)
@@ -43,9 +45,9 @@ def rand_coor(coor1, coor2):
 def rand_sleep(text):
 
     if text == 'short':
-        time.sleep(random.uniform(0.5,2.5))
+        time.sleep(random.uniform(0.5,1.7))
         pyautogui.click()
-        time.sleep(random.uniform(0.5, 1.5))
+        time.sleep(random.uniform(0.2, 1))
 
     elif text == 'medium':
         time.sleep(randint(1,5))
@@ -67,7 +69,7 @@ def rand_sleep(text):
 
     elif text == 'make_bow':
         time.sleep(random.uniform(0.5, 2))
-        pyautogui.click()
+        #pyautogui.click()
         time.sleep(random.uniform(49,51))
 
     elif text == 'string_bow':
@@ -77,5 +79,3 @@ def rand_sleep(text):
 
     else:
         return False
-
-
