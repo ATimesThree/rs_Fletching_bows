@@ -1,5 +1,5 @@
 # rs_Fletching_bows
-Runescape bot thats fletching bows
+rs_bot thats fletching bows
 This is used in Edge bank using OSBuddy, all zoomed.
 
 A basic script that uses timing to fletch bows in RS.
