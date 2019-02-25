@@ -13,15 +13,20 @@ coordinates = {'bank_second_tab' : [445, 119, 470, 137], # Second sloth in the b
                'bank_first_item' : [422, 165, 430, 178], # First item in the bank (top left)
                'bank_second_item' : [462, 162, 479, 177], # Second item in the bank (right side of the first item)
                'bank_deposit_all' : [769, 375, 790, 391], # 'Deposit all' button in the bank
-               'access_bank' : [592,159, 637, 172], # Area clicked to access the bank in just one click
+               'access_bank' : [762, 145, 842, 339], # Area clicked to access the bank in just one click
                'inventory_first_item' : [905, 293, 926, 306], # First item in the inventory (top left)
                'inventory_second_item' : [953, 293, 970, 307], # Second item in the inventory (right side of the first item)
                'compass' : [887,82,908,97], # Click the compass to reset the screen
                'bank_exit':[818,92,826,97], # Exit button in the bank
                'make_longbow': [659,469,736,520], # The box to make longbow
                'make_shortbow': [569,469,637,520], # The box to make shortbow
-               'make_soft_clay':[555,473,639,525], # The box to create soft clay
+               'gem_cutting':[555,473,639,525], # The box to create soft clay
                '14th_item':[999, 402, 1007, 415], # Item number 14 in the  inventory
+               'bank_emerald_ring': [510, 264, 532, 281], # Emerald ring in bank, line 4 item 3
+               'bank_cosmic_rune': [566, 264, 581, 286], # Cosmic rune in bank, line 4 item 4
+               'tab_spellbook': [1067, 246, 1090, 266], # Spellbook tab, next to prayer
+               'spell_enchant': [942, 326, 963, 341], # enchant spell in the inventory
+
                }
 
 
@@ -64,13 +69,20 @@ def rand_sleep(text):
     elif text == 'insane':
         time.sleep(random.uniform(0.1, 0.3))
 
-    #elif text == 'sleep_shortbow':
-    #    time.sleep(random.uniform(30,35))
+    elif text == 'enchant_ring':
+        time.sleep(random.uniform(0.3,1))
+        pyautogui.click()
+        time.sleep(random.uniform(109.5, 111))
 
     elif text == 'make_bow':
         time.sleep(random.uniform(0.5, 2))
-        #pyautogui.click()
+        pyautogui.click()
         time.sleep(random.uniform(49,51))
+
+    elif text == 'cut_gem':
+        time.sleep(random.uniform(0.5, 2))
+        pyautogui.click()
+        time.sleep(random.uniform(79.3, 80.8))
 
     elif text == 'string_bow':
         time.sleep(random.uniform(0.5, 2))
@@ -79,3 +91,5 @@ def rand_sleep(text):
 
     else:
         return False
+
+
