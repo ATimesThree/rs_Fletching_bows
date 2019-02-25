@@ -1,5 +1,7 @@
 from stringing import stringing_script
 from fletching import makeBows_script
+from enchant import enchant_script
+from gemcut import gemcutter_script
 
 
 def main_script():
@@ -13,8 +15,8 @@ def main_script():
     :return: stringing script, fletching script or reset.
     '''
 
-    print('Do you want to string bows or fletch bows?')
-    user_input = input("write 'fletch' or 'string': " )
+    print('Do you want to string bows, fletch bows, cut gems or enchant rings?')
+    user_input = input("write 'fletch', 'string', 'gem' or 'enchant': " )
 
     # Create longbows (u)
     if user_input.lower() == 'fletch':
@@ -24,9 +26,18 @@ def main_script():
     elif user_input.lower() == 'string':
         stringing_script()
 
+    # Enchant rings
+    elif user_input.lower() == 'enchant':
+        enchant_script()
+
+    # Cut gems
+    elif user_input.lower() == 'gem':
+        gemcutter_script()
+
     # Not a valid input --> Reset
     else:
         print(f'"{user_input}" is not an valid input. Try again....')
         main_script()
 
 main_script()
+
